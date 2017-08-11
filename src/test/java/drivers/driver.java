@@ -1,37 +1,53 @@
 package drivers;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class driver {
 
-    public static final String USERNAME = "erica.hagle@akqa.com";
-    public static final String ACCESS_KEY = "4sjaxUQ1W";
-    public static final String URL = "http://" + "erica15" + ":" + "jqjPmMFHG2McxZwPLZVr" + "@hub.browserstack.com/wd/hub";
-
-    private WebDriver driver;
+    static String driverPath = "/Users/erica.hagle/Desktop/Automation/chromedriver";
+    public static WebDriver driver;
+    final static String url = "https://www.facebook.com";
 
     @BeforeClass
-    public void setUp() throws Exception {
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("browser", "Firefox");
-        caps.setCapability("browser_version", "23.0");
-        caps.setCapability("os", "Windows");
-        caps.setCapability("os_version", "XP");
-        caps.setCapability("browserstack.debug", "true");
-        //This enables Visual Logs
-        driver = new RemoteWebDriver(new URL(URL), caps);
+    public static void setupTest() {
+        System.out.println("******************");
+        System.out.println("Launching Chrome browser");
+        System.setProperty("webdriver.chrome.driver", driverPath);
+
+        // Create object of HashMap Class
+        Map<String, Object> prefs = new HashMap<String, Object>();
+
+        // Set the notification setting it will override the default setting
+        prefs.put("profile.default_content_setting_values.notifications", 2);
+
+        // Set the password saver setting it will override the default setting
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
+
+        // Create object of ChromeOption class
+        ChromeOptions options = new ChromeOptions();
+
+        // Set the experimental option
+        options.setExperimentalOption("prefs", prefs);
+
+        // Add "options" to new ChromeDriver
+        driver = new ChromeDriver(options);
     }
 
     @AfterClass
-    public void tearDown() throws Exception {
-        driver.close();
-        driver.quit();
+    public static void quitDriver() {
+        if (driver != null) {
+            System.out.println("Closing Chrome browser");
+            driver.quit();
+        }
     }
 
 }
