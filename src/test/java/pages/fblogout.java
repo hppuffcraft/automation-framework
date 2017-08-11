@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class fblogout extends drivers.driver {
 
-    @Test(priority = 2)
+    @Test
     public void fbLogOut() throws IOException {
 
         //Open navigation drop down menu

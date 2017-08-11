@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public class fblogin extends drivers.driver {
 
-    @Test(priority = 1)
+    @Test
     public void fbLogin() throws IOException {
         driver.manage().window().maximize();
 
