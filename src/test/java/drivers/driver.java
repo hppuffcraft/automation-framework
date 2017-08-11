@@ -12,9 +12,9 @@ import java.util.Map;
 
 public class driver {
 
-    static String driverPath = "/Users/erica.hagle/Desktop/Automation/chromedriver";
+    public static String driverPath = "/Users/erica.hagle/Desktop/Automation/chromedriver";
     public static WebDriver driver;
-    final static String url = "https://www.facebook.com";
+    public final static String url = "https://www.facebook.com";
 
     @BeforeClass
     public static void setupTest() {
