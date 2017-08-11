@@ -5,7 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +18,7 @@ public class driver {
     public static WebDriver driver;
     public final static String url = "https://www.facebook.com";
 
-    @BeforeClass
+    @BeforeSuite
     public static void setupTest() {
         System.out.println("******************");
         System.out.println("Launching Chrome browser");
@@ -42,7 +44,7 @@ public class driver {
         driver = new ChromeDriver(options);
     }
 
-    @AfterClass
+    @AfterSuite
     public static void quitDriver() {
         if (driver != null) {
             System.out.println("Closing Chrome browser");
