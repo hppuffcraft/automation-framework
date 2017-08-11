@@ -24,7 +24,7 @@ public class fblogout extends drivers.driver {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //Select log out option
-        driver.findElement(By.partialLinkText("Log Out")).click();
+        driver.findElement(By.partialLinkText("Log out")).click();
         System.out.println("Logged out");
 
         //Implicit wait

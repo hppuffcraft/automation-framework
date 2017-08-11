@@ -38,7 +38,7 @@ public class fblogin extends drivers.driver {
 
         //Enter email = Manipulate + Interrogate
         WebElement emailField = driver.findElement(By.xpath("//INPUT[@id='email']"));
-        emailField.sendKeys("eehakqa@gmail.com");
+        emailField.sendKeys("akqaerica@gmail.com");
         System.out.println("Email entered");
 
         //Screenshot
@@ -47,7 +47,7 @@ public class fblogin extends drivers.driver {
 
         //Enter password
         WebElement passwordField = driver.findElement(By.xpath("//INPUT[@id='pass']"));
-        passwordField.sendKeys("2u#rX7gWfwG#");
+        passwordField.sendKeys("ISSDW$Xnh9xg");
         System.out.println("Password entered");
 
         //Screenshot
