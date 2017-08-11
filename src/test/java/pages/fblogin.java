@@ -17,6 +17,8 @@ public class fblogin extends drivers.driver {
 
     @Test
     public void fbLogin() throws IOException {
+
+        //Maximize the browser window
         driver.manage().window().maximize();
 
         //Navigate
@@ -32,7 +34,7 @@ public class fblogin extends drivers.driver {
 
         //Screenshot
         File scrFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile1, new File("/Users/erica.hagle/automation-homework/screenshots/facebook_launch.png"));
+        FileUtils.copyFile(scrFile1, new File("/Users/erica.hagle/AutomationFramework/screenshots/facebook_launch.png"));
 
         //Enter email = Manipulate + Interrogate
         WebElement emailField = driver.findElement(By.xpath("//INPUT[@id='email']"));
@@ -41,7 +43,7 @@ public class fblogin extends drivers.driver {
 
         //Screenshot
         File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile2, new File("/Users/erica.hagle/automation-homework/screenshots/facebook_email.png"));
+        FileUtils.copyFile(scrFile2, new File("/Users/erica.hagle/AutomationFramework/screenshots/facebook_email.png"));
 
         //Enter password
         WebElement passwordField = driver.findElement(By.xpath("//INPUT[@id='pass']"));
@@ -50,7 +52,7 @@ public class fblogin extends drivers.driver {
 
         //Screenshot
         File scrFile3 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile3, new File("/Users/erica.hagle/automation-homework/screenshots/facebook_password.png"));
+        FileUtils.copyFile(scrFile3, new File("/Users/erica.hagle/AutomationFramework/screenshots/facebook_password.png"));
 
         //Click login button
         WebElement logInButton = driver.findElement(By.id("loginbutton"));
@@ -62,7 +64,7 @@ public class fblogin extends drivers.driver {
 
         //Screenshot
         File scrFile4 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile4, new File("/Users/erica.hagle/automation-homework/screenshots/facebook_login.png"));
+        FileUtils.copyFile(scrFile4, new File("/Users/erica.hagle/AutomationFramework/screenshots/facebook_login.png"));
     }
 
 }
